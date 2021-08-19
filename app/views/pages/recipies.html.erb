@@ -1,2 +1,11 @@
 <h1>Recipies:</h1>
 <%= link_to "Retun to home", root_path %>
+<div class="cards">
+  <% @recipies.each do |recipie| %>
+    <%= link_to recipie_path(recipie["id"]) do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= recipie["image"] %>)">
+        <%= recipie["title"] %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
