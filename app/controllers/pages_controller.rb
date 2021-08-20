@@ -15,6 +15,7 @@ class PagesController < ApplicationController
 
   def show
     @recipie = session[:recipies].find {|x| x["id"] == params[:id].to_i}
+    session[:show_recipie] = @recipie
   end
 
   private

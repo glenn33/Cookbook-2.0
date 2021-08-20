@@ -1,1 +1,13 @@
-<h1>Bookings</h1>
+<h1>Your saved recipies!</h1>
+<br>
+<% @bookings.each do |booking| %>
+  <div class="card-product">
+    <img src=<%= booking.pictures %> />
+    <div class="card-product-infos">
+      <%= link_to recipie_path(booking.recipie_number.to_i) do %>
+        <h2><%= booking.name %></h2>
+      <% end %>
+      <%= link_to "Delete this save", booking_path(booking), method: :delete %>
+    </div>
+  </div>
+<% end %>
