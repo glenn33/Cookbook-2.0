@@ -6,10 +6,16 @@
     position: relative;
     top: 134px;
   }
+  h5 {
+    margin: 10 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-weight: bold;
+  }
 }
 
 .banner h1 {
-  margin: 0;
+  margin: 30px 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;

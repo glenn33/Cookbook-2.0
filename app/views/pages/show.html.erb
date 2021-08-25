@@ -1,12 +1,12 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @recipie["image"] %>);">
   <div class="container">
     <h1><%= @recipie["title"] %></h1>
+    <h5>Servings: <strong><%= @recipie["servings"] %></strong></h5>
     <%= link_to "Save recipie", new_booking_path, class:"btn btn-flat" %>
   </div>
 </div>
-<h5>Servings: <strong><%= @recipie["servings"] %></strong></h5>
 <ul>
   <% @recipie["extendedIngredients"].each do |ingredient| %>
-    <li><img src="https://spoonacular.com/cdn/ingredients_100x100/<%= ingredient["image"] %>"> <%= ingredient["original"] %> </li>
+    <li class="ingredients"><img src="https://spoonacular.com/cdn/ingredients_100x100/<%= ingredient["image"] %>"> <%= ingredient["original"] %> </li>
   <% end %>
 </ul>
