@@ -24,7 +24,9 @@
     transform: rotate(1deg);
   }
 }
-
+a:hover {
+  text-decoration: none;
+}
 
 .cards {
   display: grid;
