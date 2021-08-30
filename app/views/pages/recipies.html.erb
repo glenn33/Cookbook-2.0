@@ -1,7 +1,5 @@
-<h1>Recipies:</h1>
-<%= link_to "Retun to home", root_path, class:"btn btn-info" %>
-<%= link_to "Last page", recipies_path(search: params[:search], page: @page - 1), class:"btn btn-ghost" %>
-<%= link_to "Next page", recipies_path(search: params[:search], page: @page + 1), class:"btn btn-ghost" %>
+<h1>Recipies for "<%= params[:search] %>"</h1>
+<%= link_to "Retun to home", root_path, class:"btn btn-info bt1" %>
 <div class="cards">
   <% @recipies.each do |recipie| %>
     <%= link_to recipie_path(recipie["id"]) do %>
@@ -10,4 +8,8 @@
       </div>
     <% end %>
   <% end %>
+</div>
+<div class="pages">
+  <%= link_to "Last page", recipies_path(search: params[:search], page: @page - 1), class:"btn btn-ghost" %>
+  <%= link_to "Next page", recipies_path(search: params[:search], page: @page + 1), class:"btn btn-ghost" %>
 </div>

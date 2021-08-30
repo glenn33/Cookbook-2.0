@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
 
   def recipies
-    params[:page].nil? || !params[:page].to_i.positive? ? @page = 0 : @page = params[:page].to_i
+    params[:page].nil? || params[:page].to_i.positive? ? @page = 0 : @page = params[:page].to_i
     url = "https://api.spoonacular.com/recipes/complexSearch?query=#{params[:search]}&number=12&offset=#{@page}&apiKey=76b2170d78fc4e8b836a1055b10502a7"
     recipies = search(url)
     @recipies = recipies["results"]
