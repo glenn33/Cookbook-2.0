@@ -11,5 +11,12 @@
 </div>
 <div class="pages">
   <%= link_to "Last page", recipies_path(search: params[:search], page: @page - 1), class:"btn btn-ghost" %>
+  <select onChange="window.location.href=this.value" class="form-control" id="exampleFormControlSelect1">
+    <% number = 0 %>
+    <%= @pages.times do %>
+    <% x = number += 1 %>
+      <option value="/recipies?search=<%= params[:search] %>&page=<%= x %>"><%= x %></option>
+    <% end %>
+  </select>
   <%= link_to "Next page", recipies_path(search: params[:search], page: @page + 1), class:"btn btn-ghost" %>
 </div>
