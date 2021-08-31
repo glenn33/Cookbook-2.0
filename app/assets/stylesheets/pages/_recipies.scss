@@ -7,3 +7,13 @@
   display: flex;
   justify-content: space-between;
 }
+
+.form-control {
+  width: 13%;
+  border: none;
+  border-radius: 26px;
+  height: 42px;
+  &:focus {
+    outline: none;
+  }
+}
