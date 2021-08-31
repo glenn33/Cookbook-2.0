@@ -1,4 +1,5 @@
 <h1>Recipies for "<%= params[:search] %>"</h1>
+<p><%= @pages * 12 %> results</p>
 <%= link_to "Retun to home", root_path, class:"btn btn-info bt1" %>
 <div class="cards">
   <% @recipies.each do |recipie| %>
@@ -11,5 +12,12 @@
 </div>
 <div class="pages">
   <%= link_to "Last page", recipies_path(search: params[:search], page: @page - 1), class:"btn btn-ghost" %>
+  <select onChange="window.location.href=this.value" class="form-control" id="exampleFormControlSelect1">
+    <% number = 0 %>
+    <%= @pages.times do %>
+    <% x = number += 1 %>
+      <option value="/recipies?search=<%= params[:search] %>&page=<%= x %>"><%= x %></option>
+    <% end %>
+  </select>
   <%= link_to "Next page", recipies_path(search: params[:search], page: @page + 1), class:"btn btn-ghost" %>
 </div>
